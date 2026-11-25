@@ -11,6 +11,7 @@ if (!existsSync(src)) {
   throw new Error('POST.json is missing next to main.ts; nothing to copy.');
 }
 
+// POST.json must name one post: parse it and require a string url.
 let postUrl;
 try {
   postUrl = JSON.parse(readFileSync(src, 'utf8')).url;
